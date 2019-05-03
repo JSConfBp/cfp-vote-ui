@@ -1,5 +1,7 @@
 # cfp-vote-ui
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/JSConfBp/cfp-vote-ui.svg)](https://greenkeeper.io/)
+
 
 ## Setup for your event
 
