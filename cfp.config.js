@@ -2,8 +2,8 @@ module.exports = {
 	title: "CFP Vote Service",
 	cfp_fields: [
 		"Presentation title",
-		"Presentation summary (abstract) to be displayed on the website",
-		"More details on your Presentation"
+		"Presentation summary to be displayed on the website",
+		"Presentation summary"
 	],
 	voting_stages: {
 		'stage_1': {

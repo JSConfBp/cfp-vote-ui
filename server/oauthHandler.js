@@ -52,7 +52,12 @@ module.exports = async (req, res) => {
 	}
 
 
-	//console.log(userData);
+	console.log({
+		github_id: (userData.id).toString(),
+		name: userData.name,
+		login: userData.login,
+		token: access_token
+	});
 
 
 	const APIresponse = await fetch(`${process.env.API_URL}/v1/client`,

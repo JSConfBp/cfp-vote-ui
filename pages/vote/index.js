@@ -5,13 +5,16 @@ import getConfig from 'next/config'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import Modal from '@material-ui/core/Modal'
 import { withStyles } from '@material-ui/core/styles'
+
+
+import ErrorNotification from '../../components/ErrorNotification'
 
 import Authenticated from '../../components/Auth'
 import MenuBar from '../../components/MenuBar'
 import VoteControls from '../../components/VoteControls'
 
-import Modal from '@material-ui/core/Modal'
 import VoteUIConfig from '../../cfp.config'
 
 const { publicRuntimeConfig: { api_url } } = getConfig()
@@ -118,7 +121,12 @@ class Vote extends React.Component {
 			body: JSON.stringify({id, value})
 		})
 		.then(response => response.json())
-		.catch(e => console.error(e))
+		// TODO 4xx status is also a succesful fetch :/
+		.catch(e => {
+			this.setState({
+				error: e
+			})
+		})
 
 		if (voted.success) {
 			this.modalClose()
@@ -144,7 +152,7 @@ class Vote extends React.Component {
 	}
 
 	render() {
-		const { talk, modalOpen, loading } = this.state
+		const { talk, modalOpen, loading, error } = this.state
 		const { classes, stage } = this.props
 
 		const { completed } = talk
@@ -213,6 +221,7 @@ class Vote extends React.Component {
 				/>
 				</div>
 			</Modal>
+			<ErrorNotification error={ error } />
 		  </div>)
 	}
 
