@@ -40,7 +40,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "jsrsasign": "^8.0.12",
     "memoize-one": "^5.0.0",
-    "next": "^8.0.3",
+    "next": "^13.0.2",
     "next-compose-plugins": "^2.1.1",
     "next-redux-wrapper": "^3.0.0-alpha.1",
     "node-sass": "^4.11.0",
@@ -51,7 +51,7 @@
     "recharts": "^1.5.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "styled-jsx": "^3.2.1",
+    "styled-jsx": "^5.1.0",
     "uuid": "^3.3.2"
   }
 }
